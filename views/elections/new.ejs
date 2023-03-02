@@ -1,0 +1,47 @@
+<%- include ('../partials/header') %>
+  <div>
+    <h1 style="text-align: center;">New Voting</h1>
+    <div style="width: 30%; margin: 25px auto;">
+      <%- include ('../partials/messages') %>
+      <form action="/elections" method="POST">
+        <div class="form-group">
+          <label for="title">Title</label>
+          <input
+          class="form-control"
+          type="text"
+          name="title"
+          placeholder="e.g Student Union">
+        </div>
+
+        <div class="form-group">
+          <label for="type">Type</label>
+          <input
+          class="form-control"
+          type="text"
+          name="type"
+          placeholder="e.g Presidential Voting">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description</label>
+          <input
+          class="form-control"
+          type="text"
+          name="description"
+          placeholder="e.g This is to vote for  a new president for our student union">
+        </div>
+
+        <div class="form-group">
+          <label for="candidates">Slot</label>
+          <input
+          class="form-control"
+          type="text"
+          name="slot"
+          placeholder="e.g 2">
+        </div>
+
+        <button type="submit" class="btn btn-primary btn-block">Create</button>
+      </form>
+    </div>
+  </div>
+<%- include ('../partials/footer') %>

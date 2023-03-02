@@ -1,0 +1,44 @@
+<%- include ('partials/header') %>
+<h1 class="mt-4">Dashboard</h1>
+<p class="lead mb-3">Welcome <%= name %></p>
+<p>
+  <a class="btn btn-primary btn-large" href="/elections/new">Create New Election</a>
+
+  <span>
+    <a class="btn btn-success btn-large" href="/elections">Available Elections</a>
+  </span>
+</p>
+
+<% if (elections == "") { %>
+  <h4>You have no created election.</h4>
+<% } else { %>
+  <div class="row text-center" style="display: flex; flex-wrap: wrap;">
+    <% elections.forEach((election) => { %>
+      <div class="col-md-3 col-sm-6">
+        <div class="card">
+          <div class="thumbnail">
+            <img src="<%= election.image %>">
+            <div class="caption">
+              <div class="card-header">
+                <h3><%= election.title %></h3>
+              </div>
+              <div class="card-body">
+                <h4><%= election.type %></h4>
+                <h6><%= election.description %></h6>
+              </div>
+              <div class="card-footer">
+                <h6><%= election.candidates.length %> Candidates</h6>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    <%})%>
+  </div>
+<% } %>
+
+<br>
+
+<a href="/users/logout" class="btn btn-secondary">Logout</a>
+<%- include ('partials/footer') %>

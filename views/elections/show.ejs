@@ -1,0 +1,46 @@
+<%- include ('../partials/header') %>
+<div class="row">
+  <div class="col-md-6 m-auto">
+    <div class="caption-full">
+      <h2><a href="#"><%= election.title %></a></h2>
+      <h4><%= election.type %></h4>
+      <p><%= election.description %></p>
+      <% election.candidates.forEach((candidate) => { %>
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <div class="thumbnail">
+              <img src="<%= candidate.image %>">
+              <div class="caption">
+                <div class="card-header">
+                  <h3><%= candidate.name %></h3>
+                </div>
+                <div class="card-body">
+                  <h4><%= candidate.about %></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      <%})%>
+      <p>
+        <em>Submitted By <%= election.author.name %></em>
+      </p>
+      <h6><%= election.candidates.length %></h6>
+        <h6><%= election.slot %></h6>
+      <% if (currentUser && election.author.id.equals(currentUser._id)) { %>
+
+        <div class="well">
+          <div class="text-right">
+            <a class="btn btn-success" href="/elections/<%= election._id %>/candidates/new">Add Candidate</a>
+          </div>
+        </div>
+
+      <a class="btn btn-xs btn-warning" href="/elections/<%= election._id %>/edit">Edit</a>
+      <form id="delete-form" action="/elections/<%= election._id %>?_method=DELETE" method="POST">
+        <button class="btn btn-xs btn-danger">Delete</button>
+      </form>
+      <% } %>
+    </div>
+  </div>
+</div>
+<%- include ('../partials/footer') %>

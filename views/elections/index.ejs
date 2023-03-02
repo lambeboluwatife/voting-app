@@ -1,0 +1,41 @@
+<%- include ('../partials/header') %>
+<div class="container">
+<header class="jumbotron">
+  <div class="container">
+    <h1>Voting App</h1>
+    <p>View all available and ongoing voting all around the world.</p>
+      <p>
+        <a class="btn btn-primary btn-large" href="/elections/new">Create New Election</a>
+      </p>
+  </div>
+</header>
+
+<div class="row text-center" style="display: flex; flex-wrap: wrap;">
+<!-- <div class="col-lg-12">
+  <h3>Our Most Popular Campgrounds!</h3>
+</div> -->
+
+<% elections.forEach((election) => { %>
+  <div class="col-md-3 col-sm-6">
+    <div class="thumbnail">
+      <img src="<%= election.image %>">
+      <div class="caption">
+        <h3><%= election.title %></h3>
+        <h4><%= election.type %></h4>
+        <h6><em>Created By: <%= election.author.name %></em></h6>
+
+      </div>
+      <p>
+        <a href="/elections/<%= election._id%>" class="btn btn-primary">More >></a>
+      </p>
+    </div>
+  </div>
+<%})%>
+</div>
+
+<p>
+  <a class="btn btn-success btn-large" href="/dashboard">Dashboard</a>
+</p>
+
+</div>
+<%- include ('../partials/footer') %>
