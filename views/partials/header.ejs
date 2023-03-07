@@ -1,19 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <meta name="description" content="An application where voting can be done on.">
-    <meta name="keywords" content="vote, voting, application, HTML, CSS, BOOTSTRAP, JS, NodeJS, express, MongoDB">
-    <meta name="author" content="Lambe Boluwatife">
-    <title>Voting</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9iIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-    <link rel="stylesheet" href="fontawesome/css/fontawesome.css">
-    <link rel="stylesheet" href="fontawesome/css/solid.css">
-    <link rel="stylesheet" href="fontawesome/css/brands.css">
-    <link rel="stylesheet" href="BOOTSTRAP/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="https://bootswatch.com/4/journal/bootstrap.min.css">
+    <meta
+      name="description"
+      content="An application where voting can be done on."
+    />
+    <meta
+      name="keywords"
+      content="vote, voting, application, HTML, CSS, BOOTSTRAP, JS, NodeJS, express, MongoDB"
+    />
+    <meta name="author" content="Lambe Boluwatife" />
+    <title>E-Polls</title>
+    <link rel="stylesheet" href="/fontawesome/css/fontawesome.css" />
+    <link rel="stylesheet" href="/fontawesome/css/solid.css" />
+    <link rel="stylesheet" href="/fontawesome/css/brands.css" />
+    <link rel="stylesheet" href="/css/home.css" />
+
+    <link
+      href="/assets/css/theme-mobile-app.css"
+      rel="stylesheet"
+      type="text/css"
+      media="all"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/assets/fonts/Inter-UI-upright.var.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      as="font"
+      href="/assets/fonts/Inter-UI.var.woff2"
+      type="font/woff2"
+      crossorigin="anonymous"
+    />
+    <style>
+      .main {
+        height: 100vh;
+      }
+      .login-backdrop {
+        background-image: url(/assets/img/vote3.png);
+        height: 100vh;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    </style>
   </head>
+
   <body>
-    <div class="container-fluid">
+    <div class="navbar-container mb-1">
+      <nav
+        class="navbar navbar-expand-lg justify-content-between navbar-light border-bottom-0 bg-white"
+        data-overlay
+        data-sticky="top"
+      >
+        <div class="container">
+          <a class="navbar-brand mr-0 fade-page text-primary" href="/"
+            >E-Polls</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target=".navbar-collapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <img
+              class="icon navbar-toggler-open"
+              src="/assets/img/icons/interface/menu.svg"
+              alt="menu interface icon"
+              data-inject-svg
+            />
+            <img
+              class="icon navbar-toggler-close"
+              src="/assets/img/icons/interface/cross.svg"
+              alt="cross interface icon"
+              data-inject-svg
+            />
+          </button>
+          <div class="collapse navbar-collapse justify-content-end">
+            <% if(!currentUser){ %>
+            <div
+              class="collapse navbar-collapse justify-content-end col flex-fill px-0"
+            >
+              <a href="/users/login" class="btn btn-primary ml-lg-3">Sign In</a>
+            </div>
+            <% } else { %>
+            <div
+              class="collapse navbar-collapse text-primary justify-content-end col flex-fill px-0"
+            >
+              <%= currentUser.name %>
+            </div>
+            <% } %>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </body>
+</html>

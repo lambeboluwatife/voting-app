@@ -1,21 +1,100 @@
 <%- include ('partials/header') %>
-  <h1>This is the landing page!</h1>
 
-  <p>Welcome to Voting App</p>
-
-  <a href="/elections">View All Available Vote</a>
-
-  <div class="row mt-5">
-  <div class="col-md-6 m-auto">
-    <div class="card card-body text-center">
-      <h1><i class="fa fa-check-square-o fa-3x"></i></h1>
-      <p>Create an account or login</p>
-      <a href="/users/register" class="btn btn-primary btn-block mb-2">
-        Register
-      </a>
-      <a href="/users/login" class="btn btn-secondary btn-block">Login</a>
+<section class="main">
+  <div class="container grid">
+    <div class="main-title">
+        <h1 class="display-3 text-primary-3 mt-5">
+          Create fast and easy polls.
+        </h1>
+        <p class="lead">
+          Create fast and easy polls, vote and perform your little election in
+          one app.
+        </p>
+        <div class="d-sm-flex mb-2 mt-4 justify-content-left">
+          <a
+            href="/users/register"
+            class="btn btn-lg btn-primary-3 mx-2 mb-2 mb-sm-0"
+            >Explore E-Polls</a
+          >
+        </div>
+      </div>
+      <div class="main-image">
+        <img src="/assets/img/svg/undraw_voting_nvu7.svg" alt="">
+      </div>
     </div>
   </div>
-</div>
+</section>
+
+<section class="pt-0 bg-primary-3">
+  <div class="container">
+    <div class="row justify-content-center text-center mb-6">
+      <div class="col-xl-8 col-lg-9">
+        <h2 class="mx-xl-6 mt-5 display-4 text-primary">E-Polls.</h2>
+        <p class="lead text-light">
+          E-Polls can be used for ant form of voting or election process. Be it to vote for the best beauty pageant, or the best school or any voting related acts.
+        </p>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mt-6 mb-lg-n7">
+      <div class="col-xl-8 col-lg-9 layer-1">
+        <div class="shadow-lg rounded mb-3">
+          <img src="assets/img/vote1.png" alt="Image" />
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="container pt-0">
+    <div class="col">
+      <h2 class="h4 text-center">Easy Steps</h2>
+    </div>
+    <div class="row text-center">
+      <div
+        class="col-md-4 mb-3 mb-md-0"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="px-xl-2">
+          <div class="process-circle bg-primary mb-3 d-inline-flex">1</div>
+          <h4>Create your account</h4>
+          <p>
+            Start up by creating an account, then sign in to your account.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-md-4 mb-3 mb-md-0"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        <div class="px-xl-2">
+          <div class="process-circle bg-primary-2 mb-3 d-inline-flex">
+            2
+          </div>
+          <h4>Create a poll</h4>
+          <p>
+            Navigate to your dashboard and click the new poll button and fill all the necessary fields.
+          </p>
+        </div>
+      </div>
+      <div
+        class="col-md-4 mb-3 mb-md-0"
+        data-aos="fade-up"
+        data-aos-delay="300"
+      >
+        <div class="px-xl-2">
+          <div class="process-circle bg-primary-3 mb-3 d-inline-flex">
+            3
+          </div>
+          <h4>Share</h4>
+          <p>After creating a poll, you can then share the link and the public will vote. And after the completion, the poll results will be available.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <%- include ('partials/footer') %>
