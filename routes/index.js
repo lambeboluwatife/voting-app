@@ -32,6 +32,4 @@ router.get("/dashboard", middleware.ensureAuthenticated, (req, res) => {
   );
 });
 
-
-
 module.exports = router;
